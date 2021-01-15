@@ -11,12 +11,12 @@
 
     <div class="form-group">
         <label for="name-field">Holiday Name</label>
-        <input class="form-control" id="name-field" type="text" th:field="*{name}" placeholder="Enter the holiday name"/>
+        <input class="form-control" id="name-field" type="text" th:field="*{holidayName}" placeholder="Enter the holiday name"/>
     </div>
 
     <div class="form-group">
         <label for="date-field">Holiday date</label>
-        <input class="form-control" type="date" id="date-field" th:field="*{date}" placeholder="Enter holiday date"/>
+        <input class="form-control" type="date" id="date-field" th:field="*{holidayDate}" placeholder="Enter holiday date"/>
     </div>
     <input type="submit" class= "btn-btn-primary" value="Update holiday"/>
 </form>

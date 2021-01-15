@@ -14,18 +14,14 @@ import java.util.List;
 @Controller
 public class HolidayController {
 
-    private final HolidayRepository holidayRepository;
-
-    public HolidayController(HolidayRepository holidayRepository) {
-        this.holidayRepository = holidayRepository;
-    }
+    @Autowired
+    private HolidayRepository holidayRepository;
 
     @GetMapping("/holidays")
     public String cohortsIndex(Model model) {
         List<Holiday> holidays = holidayRepository.findAll();
         model.addAttribute("holidays", holidays);
-        model.addAttribute("byDate", Comparator.comparing(Holiday::getDate));
-
+        model.addAttribute("byDate", Comparator.comparing(Holiday::getHolidayDate));
         return "holidays/holidays";
     }
 
@@ -52,7 +48,7 @@ public class HolidayController {
     @PostMapping("holidays/{id}/edit")
     public String editHoliday(@PathVariable Long id, @Valid Holiday editedHoliday, Model model) {
         editedHoliday.setId(id);
-        editedHoliday.setName(editedHoliday.getName());
+        editedHoliday.setHolidayName(editedHoliday.getHolidayName());
         holidayRepository.save(editedHoliday);
         return "redirect:/holidays";
     }

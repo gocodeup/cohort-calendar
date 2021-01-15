@@ -3,6 +3,7 @@ package com.edimitri.cohortcalendar.services;
 import com.edimitri.cohortcalendar.models.CohortDay;
 import com.edimitri.cohortcalendar.models.Holiday;
 import com.edimitri.cohortcalendar.repositories.HolidayRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.DayOfWeek;
@@ -12,11 +13,9 @@ import java.util.List;
 
 @Service
 public class CohortCalendarServiceImpl implements CohortCalendarService{
-    private final HolidayRepository holidayRepository;
 
-    public CohortCalendarServiceImpl(HolidayRepository holidayRepository){
-        this.holidayRepository=holidayRepository;
-    }
+    @Autowired
+    private HolidayRepository holidayRepository;
 
     @Override
     public List<CohortDay> getCalendar(LocalDate startDate, double contactHours){
@@ -26,7 +25,7 @@ public class CohortCalendarServiceImpl implements CohortCalendarService{
         LocalDate currentDate=startDate;
         double totalHours=0;
         while (totalHours<contactHours){
-            Holiday holiday = getHolidayByDate(currentDate);
+            Holiday holiday = holidayRepository.findFirstByHolidayDate(currentDate);
             double dayHours=0;
             if(holiday==null){
                 dayHours=getHoursOfDayofWeek(currentDate.getDayOfWeek());
@@ -36,11 +35,6 @@ public class CohortCalendarServiceImpl implements CohortCalendarService{
             currentDate=currentDate.plusDays(1);
         }
         return results;
-    }
-
-
-    public Holiday getHolidayByDate(LocalDate date) {
-        return holidayRepository.findFirstByDate(date);
     }
 
     public static double getHoursOfDayofWeek(DayOfWeek dayOfWeek) {

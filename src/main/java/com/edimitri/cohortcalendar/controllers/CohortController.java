@@ -84,7 +84,7 @@ public class CohortController {
         for (CohortDay cohortDay: calendar) {
             String dayDisplay = "";
             if(cohortDay.getHoliday() != null) {
-                dayDisplay = String.format("%s", cohortDay.getHoliday().getName());
+                dayDisplay = String.format("%s", cohortDay.getHoliday().getHolidayName());
             } else {
                 dayDisplay = cohortDay.getDate().getDayOfWeek().toString();
             }
@@ -92,7 +92,5 @@ public class CohortController {
         }
         return body;
     }
-
-
 
 }
