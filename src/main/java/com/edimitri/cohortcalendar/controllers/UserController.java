@@ -1,6 +1,7 @@
 package com.edimitri.cohortcalendar.controllers;
 
 import com.edimitri.cohortcalendar.models.*;
+import com.edimitri.cohortcalendar.repositories.Roles;
 import com.edimitri.cohortcalendar.services.UserService;
 import com.google.inject.internal.Errors;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +30,11 @@ public class UserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    /*@Autowired
-    private UserRoles userRoles;*/
+    @Autowired
+    private Roles userRoles;
 
     @Autowired
     private UserService userService;
-
 
     @GetMapping("/sign-up")
     public String showSignupForm(Model model) {
@@ -46,68 +46,53 @@ public class UserController {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         userRepository.save(user);
-        authenticate(user);
+        userService.authenticate(user);
         return "index";
     }
 
-    private void authenticate(User user) {
-        UserDetails userDetails = new UserWithRoles(user, Collections.emptyList());
-        Authentication auth = new UsernamePasswordAuthenticationToken(
-                userDetails,
-                userDetails.getPassword(),
-                userDetails.getAuthorities()
-        );
-        SecurityContext context = SecurityContextHolder.getContext();
-        context.setAuthentication(auth);
-    }
-
-    /*@PostMapping("/users/create")
-    public String saveUser(@Valid User user, Errors validation, Model m){
-
-        String username = user.getUsername();
-        User existingUsername = userRepository.findByUsername(username);
-        User existingEmail = userRepository.findByEmail(user.getEmail());
-
-*//*
-        if(existingUsername != null){
-
-            validation.rejectValue("username", "user.username", "Duplicated username " + username);
-
-        }
-
-        if(existingEmail != null){
-
-            validation.rejectValue("email", "user.email", "Duplicated email " + user.getEmail());
-
-        }
-
- *//*
-
-        if (validation.hasErrors()) {
-            m.addAttribute("errors", validation);
-            m.addAttribute("user", user);
-            return "users/create";
-        }
-
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-
-        // Custom validation if the username is taken
-
-        User newUser = UserRepository.save(user);
-
-        UserRole ur = new UserRole();
-        ur.setRole("ROLE_USER");
-        ur.setUserId(newUser.getId());
-        userRoles.save(ur);
-
-        // Programmatic login after registering a user
-        UserService.authenticate(user);
-
-        m.addAttribute("user", user);
-        return "redirect:/";
-
-    }*/
-
+//    @PostMapping("/users/create")
+//    public String saveUser(@Valid User user, Errors validation, Model m){
+//
+//        String username = user.getUsername();
+//        User existingUsername = userRepository.findByUsername(username);
+//        User existingEmail = userRepository.findByEmail(user.getEmail());
+//
+////        if(existingUsername != null){
+////
+////            validation.re("username", "user.username", "Duplicated username " + username);
+////
+////        }
+////
+////        if(existingEmail != null){
+////
+////            validation.rejectValue("email", "user.email", "Duplicated email " + user.getEmail());
+////
+////        }
+//
+//        if (validation.hasErrors()) {
+//            m.addAttribute("errors", validation);
+//            m.addAttribute("user", user);
+//            return "users/create";
+//        }
+//
+//        user.setPassword(passwordEncoder.encode(user.getPassword()));
+//
+//        // Custom validation if the username is taken
+//
+//        User newUser = userRepository.save(user);
+//
+//        UserRole ur = new UserRole();
+//        ur.setRole("ROLE_USER");
+//        ur.setUserId(newUser.getId());
+//        userRoles.save(ur);
+//
+//        // Programmatic login after registering a user
+//        userService.authenticate(user);
+//
+//        m.addAttribute("user", user);
+//        return "redirect:/";
+//
+//    }
 
     @GetMapping("/users/profile")
     public String showProfile(Model viewModel){

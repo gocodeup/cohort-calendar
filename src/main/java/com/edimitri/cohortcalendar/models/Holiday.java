@@ -4,7 +4,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Table(name = "holidays")
@@ -14,17 +13,17 @@ public class Holiday {
     private Long id;
 
     @Column(nullable=false)
-    private String name;
+    private String holidayName;
 
     @Column(nullable=false, unique=true)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate date;
+    private LocalDate holidayDate;
 
     public Holiday(){}
 
-    public Holiday(String name, LocalDate date) {
-        this.name = name;
-        this.date = date;
+    public Holiday(String holidayName, LocalDate holidayDate) {
+        this.holidayName = holidayName;
+        this.holidayDate = holidayDate;
     }
 
     public Long getId() {
@@ -35,20 +34,20 @@ public class Holiday {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getHolidayName() {
+        return holidayName;
     }
 
-    public void setName(String name) {
-        this.name= name;
+    public void setHolidayName(String name) {
+        this.holidayName = name;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getHolidayDate() {
+        return holidayDate;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setHolidayDate(LocalDate date) {
+        this.holidayDate = date;
     }
 
 }
