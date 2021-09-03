@@ -1,5 +1,43 @@
 use cohort_calendar_db;
 
+#2022 holiday dates
+INSERT INTO holidays(name, date)
+VALUES ('MLK Day','2022-01-17'),
+       ('Staff Development Day','2022-01-28'),
+       ('President''s Day','2022-02-21'),
+('Staff Development Day','2022-02-25'),
+('Q1 Department Offsites','2022-03-25'),
+('Good Friday','2022-04-15'),
+('Staff Development Day','2022-04-29'),
+('Staff Development Day','2022-05-27'),
+('Memorial Day','2022-05-30'),
+('Q2 Department Offsites','2022-06-23'),
+('H1 All Staff Day','2022-06-24'),
+('Independence Day','2022-07-04'),
+('Staff Development Day','2022-07-29'),
+('Staff Development Day','2022-08-26'),
+('Labor Day','2022-09-05'),
+('Q3 Department Offsites','2022-09-30'),
+('Indigenous People''s Day','2022-10-10'),
+   ('H2 All Staff Day','2022-10-28'),
+   ('Veteran''s Day','2022-11-11'),
+    ('Thanksgiving Wednesday','2022-11-23'),
+    ('Thanksgiving Thursday','2022-11-24'),
+    ('Thanksgiving Friday','2022-11-25'),
+    ('Q4 Department Offsites','2022-12-09'),
+    ('Winter Break','2022-12-19'),
+    ('Winter Break','2022-12-20'),
+    ('Winter Break','2022-12-21'),
+    ('Winter Break','2022-12-22'),
+    ('Winter Break','2022-12-23'),
+    ('Winter Break','2022-12-26'),
+    ('Winter Break','2022-12-27'),
+    ('Winter Break','2022-12-28'),
+    ('Winter Break','2022-12-29'),
+    ('Winter Break','2022-12-30'),
+    ('Winter Break','2023-01-01');
+
+
 #2021 holiday dates
 INSERT INTO holidays(name, date)
 VALUES ('New Years','2021-01-01'),
@@ -37,6 +75,7 @@ VALUES ('New Years','2021-01-01'),
        ('Winter Break Day 8','2021-12-29'),
        ('Winter Break Day 9','2021-12-30'),
        ('Winter Break Day 10','2021-12-31');
+
 
 # #2020 holiday dates
 # INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/01/02', 'New Years');
