@@ -1,7 +1,7 @@
 use cohort_calendar_db;
 
 #2021 holiday dates
-INSERT INTO holidays(holiday_name, holiday_date)
+INSERT INTO holidays(name, date)
 VALUES ('New Years','2021-01-01'),
        ('MLK Day','2021-01-18'),
        ('Presidents Day','2021-2-15'),
@@ -38,38 +38,38 @@ VALUES ('New Years','2021-01-01'),
        ('Winter Break Day 9','2021-12-30'),
        ('Winter Break Day 10','2021-12-31');
 
-#2020 holiday dates
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/01/02', 'New Years');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/01/03', 'New Years');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/01/20', 'MLK Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/02/17', 'President’s Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/02/28', 'Staff Development Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/03/27', 'Delivery Department Staff Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/04/10', 'Good Friday');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/04/24', 'Battle of Flowers Parade');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/04/27', 'Staff Development Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/05/25', 'Memorial Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/06/05', 'Staff Development Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/06/25', 'Delivery Department Staff Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/06/26', 'All Staff Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/07/03', 'Independence Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/08/21', 'Staff Development Day. ');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/09/07', 'Labor Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/09/25', 'Delivery Department Staff Day. ');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/10/12', 'Columbus Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/10/23', 'Staff Development Day.');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/11/11', 'All Staff Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/11/11', 'Veterans Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/11/25', 'Thanksgiving');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/11/26', 'Thanksgiving');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/11/27', 'Thanksgiving');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/12/11', 'Delivery Department Staff Day');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/12/21', 'Winter Break');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/12/22', 'Winter Break');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/12/23', 'Winter Break');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/12/24', 'Winter Break');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/12/25', 'Winter Break');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/12/28', 'Winter Break');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/12/29', 'Winter Break');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/12/30', 'Winter Break');
-INSERT INTO cohort_calendar_db.holidays (holiday_date, holiday_name) VALUES ('2020/12/31', 'Winter Break');
+# #2020 holiday dates
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/01/02', 'New Years');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/01/03', 'New Years');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/02/17', 'President’s Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/02/28', 'Staff Development Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/03/27', 'Delivery Department Staff Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/01/20', 'MLK Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/04/10', 'Good Friday');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/04/24', 'Battle of Flowers Parade');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/04/27', 'Staff Development Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/05/25', 'Memorial Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/06/05', 'Staff Development Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/06/25', 'Delivery Department Staff Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/06/26', 'All Staff Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/07/03', 'Independence Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/08/21', 'Staff Development Day. ');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/09/07', 'Labor Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/09/25', 'Delivery Department Staff Day. ');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/10/12', 'Columbus Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/11/11', 'All Staff Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/10/23', 'Staff Development Day.');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/11/11', 'Veterans Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/11/25', 'Thanksgiving');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/11/26', 'Thanksgiving');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/11/27', 'Thanksgiving');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/12/11', 'Delivery Department Staff Day');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/12/21', 'Winter Break');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/12/22', 'Winter Break');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/12/23', 'Winter Break');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/12/24', 'Winter Break');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/12/25', 'Winter Break');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/12/28', 'Winter Break');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/12/29', 'Winter Break');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/12/30', 'Winter Break');
+# INSERT INTO cohort_calendar_db.holidays (date, name) VALUES ('2020/12/31', 'Winter Break');
