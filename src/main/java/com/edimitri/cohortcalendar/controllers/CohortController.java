@@ -38,6 +38,19 @@ public class CohortController {
         return "cohorts/add";
     }
 
+    @GetMapping("/cohorts/update_all_grad_dates")
+    public String updateAll() {
+        //get all cohorts
+        List<Cohort> cohorts = cohortRepository.findAll();
+        cohorts.forEach((cohort)-> {
+            //get days of cohort into an array list
+            List<CohortDay> calendar = cohortCalendarService.getCalendar(cohort.getStartDate(),cohort.getContactHours());
+            //get last date of cohort by passing in the date that I get from CohortDay at index of calendar.size-1; pass into gradDate setter
+            cohort.setGradDate(calendar.get(calendar.size()-1).getDate());
+            cohortRepository.save(cohort);
+        });
+        return "redirect:/cohorts";
+    }
     @PostMapping("/cohorts/add")
     public String saveCohort(@ModelAttribute Cohort cohort) {
         //get days of cohort into an array list
